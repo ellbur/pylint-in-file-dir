@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+echo "Args are $*" > /tmp/pargs.txt
+
+last_arg=${*[-1]}
+dir_of_file=${last_arg:a:h}
+
+while [ -e $dir_of_file/__init__.py ] ; do
+    up=$dir_of_file/..
+    dir_of_file=${up:a}
+done
+
+cd $dir_of_file
+
+~/.local/bin/pylint $*
+

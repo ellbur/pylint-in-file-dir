@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+dpkg-deb --build pylint-in-file-dir
+
+version=$(dpkg --info ./pylint-in-file-dir.deb | grep Version | awk '{ print $2 }')
+mv ./pylint-in-file-dir.deb ./pylint-in-file-dir_$version.deb
+

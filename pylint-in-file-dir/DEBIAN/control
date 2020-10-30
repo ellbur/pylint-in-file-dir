@@ -1,0 +1,9 @@
+Package: pylint-in-file-dir
+Version: 1.0
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 8192
+Maintainer: ellbur@gmail.com
+Description: Run pylint in the directory of the file you're running it on
