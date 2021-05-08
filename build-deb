@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+cp -a ./src/pylint-in-file-dir ./debian/pylint-in-file-dir/usr/bin/
+dpkg-deb --build ./debian/pylint-in-file-dir
+
+version=$(dpkg --info ./debian/pylint-in-file-dir.deb | grep Version | awk '{ print $2 }')
+mv ./debian/pylint-in-file-dir.deb ./debian/pylint-in-file-dir_$version.deb
+

@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-echo "Args are $*" > /tmp/pargs.txt
-
 last_arg=${*[-1]}
 dir_of_file=${last_arg:a:h}
 
@@ -12,5 +10,5 @@ done
 
 cd $dir_of_file
 
-~/.local/bin/pylint $*
+pylint $*
 

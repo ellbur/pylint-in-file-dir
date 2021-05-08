@@ -1,1 +1,3 @@
 *.deb
+/arch-build/
+/debian/pylint-in-file-dir/usr/bin/pylint-in-file-dir

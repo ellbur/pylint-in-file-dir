@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+set -e
+
+exec="$(realpath $0)"
+here="$(dirname $exec)"
+rm -rf $here/arch-build
+cp -a $here/arch $here/arch-build
+cd $here/src
+tar cz --xform 's,^,pylint-in-file-dir-1.0/,' * > ../arch-build/pylint-in-file-dir-1.0.tar.gz
+cd $here/arch-build
+makepkg -g >> PKGBUILD
+makepkg
+
